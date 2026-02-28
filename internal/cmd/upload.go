@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/atotto/clipboard"
 	"github.com/lzwang/lskypro-cli/internal/output"
 	"github.com/urfave/cli/v2"
 )
@@ -86,7 +87,12 @@ func doUpload(cCtx *cli.Context) error {
 	default:
 		copyLink = result.Data.Links.URL
 	}
-	fmt.Fprintf(os.Stderr, "已复制: %s\n", copyLink)
+	// 复制到剪贴板
+	if err := clipboard.WriteAll(copyLink); err != nil {
+		fmt.Fprintf(os.Stderr, "警告: 复制到剪贴板失败: %v\n", err)
+	} else {
+		fmt.Fprintf(os.Stderr, "已复制: %s\n", copyLink)
+	}
 
 	return nil
 }
