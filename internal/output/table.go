@@ -35,7 +35,7 @@ func (f *TableFormatter) FormatProfile(data *ProfileData) string {
 		{"邮箱", data.Email},
 		{"用户名", data.Name},
 		{"头像", data.Avatar},
-		{"已用空间", FormatBytes(data.StorageUsed)},
+		{"已用空间", FormatBytes(float64(data.StorageUsed))},
 		{"图片数量", fmt.Sprintf("%d", data.ImageNum)},
 		{"相册数量", fmt.Sprintf("%d", data.AlbumNum)},
 		{"注册 IP", data.RegisteredIP},

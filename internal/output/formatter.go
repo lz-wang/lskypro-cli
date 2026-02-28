@@ -30,7 +30,7 @@ type ProfileData struct {
 type UploadData struct {
 	Key        string `json:"key"`
 	OriginName string `json:"origin_name"`
-	Size       int64  `json:"size"`
+	Size       float64 `json:"size"`
 	Mimetype   string `json:"mimetype"`
 	Width      int    `json:"width"`
 	Height     int    `json:"height"`
@@ -53,7 +53,7 @@ type Links struct {
 type ImageData struct {
 	Key        string `json:"key"`
 	OriginName string `json:"origin_name"`
-	Size       int64  `json:"size"`
+	Size       float64 `json:"size"`
 	Mimetype   string `json:"mimetype"`
 	Width      int    `json:"width"`
 	Height     int    `json:"height"`
@@ -119,15 +119,15 @@ func NewFormatter(format string, writer io.Writer) Formatter {
 }
 
 // FormatBytes 格式化字节数
-func FormatBytes(bytes int64) string {
+func FormatBytes(bytes float64) string {
 	const unit = 1024
 	if bytes < unit {
-		return fmt.Sprintf("%d B", bytes)
+		return fmt.Sprintf("%.0f B", bytes)
 	}
-	div, exp := int64(unit), 0
+	div, exp := float64(unit), 0
 	for n := bytes / unit; n >= unit; n /= unit {
 		div *= unit
 		exp++
 	}
-	return fmt.Sprintf("%.1f %ciB", float64(bytes)/float64(div), "KMGTPE"[exp])
+	return fmt.Sprintf("%.1f %ciB", bytes/div, "KMGTPE"[exp])
 }

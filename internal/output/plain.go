@@ -21,7 +21,7 @@ func (f *PlainFormatter) FormatProfile(data *ProfileData) string {
 	fmt.Fprintf(f.writer, "邮箱: %s\n", data.Email)
 	fmt.Fprintf(f.writer, "用户名: %s\n", data.Name)
 	fmt.Fprintf(f.writer, "头像: %s\n", data.Avatar)
-	fmt.Fprintf(f.writer, "已用空间: %s\n", FormatBytes(data.StorageUsed))
+	fmt.Fprintf(f.writer, "已用空间: %s\n", FormatBytes(float64(data.StorageUsed)))
 	fmt.Fprintf(f.writer, "图片数量: %d\n", data.ImageNum)
 	fmt.Fprintf(f.writer, "相册数量: %d\n", data.AlbumNum)
 	fmt.Fprintf(f.writer, "注册 IP: %s\n", data.RegisteredIP)

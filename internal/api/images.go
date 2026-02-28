@@ -13,7 +13,7 @@ type UploadResponse struct {
 	Data    struct {
 		Key        string `json:"key"`
 		OriginName string `json:"origin_name"`
-		Size       int64  `json:"size"`
+		Size       float64 `json:"size"`
 		Mimetype   string `json:"mimetype"`
 		Width      int    `json:"width"`
 		Height     int    `json:"height"`
@@ -54,7 +54,7 @@ type ImagesListResponse struct {
 		Images      []struct {
 			Key        string `json:"key"`
 			OriginName string `json:"origin_name"`
-			Size       int64  `json:"size"`
+			Size       float64 `json:"size"`
 			Mimetype   string `json:"mimetype"`
 			Width      int    `json:"width"`
 			Height     int    `json:"height"`
