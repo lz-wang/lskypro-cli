@@ -26,7 +26,7 @@ type AlbumsListResponse struct {
 			Name     string `json:"name"`
 			Intro    string `json:"intro"`
 			ImageNum int    `json:"image_num"`
-		} `json:"albums"`
+		} `json:"data"`
 	} `json:"data"`
 }
 
