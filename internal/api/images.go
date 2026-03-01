@@ -70,7 +70,7 @@ type ImagesListResponse struct {
 				MarkdownWithLink string `json:"markdown_with_link"`
 				ThumbnailURL     string `json:"thumbnail_url"`
 			} `json:"links"`
-		} `json:"images"`
+		} `json:"data"`
 	} `json:"data"`
 }
 
