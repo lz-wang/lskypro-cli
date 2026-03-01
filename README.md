@@ -9,7 +9,7 @@ Lsky Pro 图床命令行管理工具，支持图片上传、管理等功能。
 ```bash
 git clone https://github.com/lzwang/lskypro-cli.git
 cd lskypro-cli
-go build -o lc .
+make build
 ```
 
 ## 快速开始
@@ -92,10 +92,10 @@ lc upload <文件路径> [选项]
 lc upload photo.png
 
 # 上传并复制 Markdown 格式链接
-lc upload photo.png --copy markdown
+lc upload --copy markdown photo.png
 
 # 指定存储策略
-lc upload photo.png -s 2
+lc upload -s 2 photo.png
 ```
 
 ### 图片管理
