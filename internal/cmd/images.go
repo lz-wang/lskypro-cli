@@ -55,9 +55,9 @@ var imagesCommand = &cli.Command{
 			Usage:   "删除图片",
 			Flags: []cli.Flag{
 				&cli.BoolFlag{
-					Name:    "force",
-					Aliases: []string{"f"},
-					Usage:   "跳过确认",
+					Name:    "yes",
+					Aliases: []string{"y", "f", "force"},
+					Usage:   "跳过确认直接删除",
 				},
 			},
 			Action: doImagesDelete,
@@ -139,7 +139,7 @@ func doImagesDelete(cCtx *cli.Context) error {
 	}
 
 	keys := cCtx.Args().Slice()
-	force := cCtx.Bool("force")
+	force := cCtx.Bool("yes")
 
 	// 确认删除
 	if !force {
