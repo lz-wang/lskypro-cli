@@ -9,7 +9,7 @@ import (
 
 var strategiesCommand = &cli.Command{
 	Name:    "strategies",
-	Aliases: []string{"st"},
+	Aliases: []string{"stg"},
 	Usage:   "查看存储策略",
 	Subcommands: []*cli.Command{
 		{
