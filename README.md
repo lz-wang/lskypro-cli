@@ -4,6 +4,10 @@ Lsky Pro 图床命令行管理工具，支持图片上传、管理等功能。
 
 ## 安装
 
+### 下载预编译的二进制文件
+
+请访问 [Release](https://github.com/lz-wang/lskypro-cli/releases/latest) 页面下载对应的平台版本即可
+
 ### 从源码编译
 
 ```bash
